@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import "tailwindcss";
+
+/* ─── Design Tokens ─────────────────────────────────────────────────────── */
+:root {
+  --app-bg:      #141414;
+  --app-surface: #1c1c1c;
+  --app-border:  #2a2a2a;
+  --app-text:    #ffffff;
+  --app-muted:   #9ca3af;
+  --app-nav:     #141414;
+  --app-accent:  #e50914;
+}
+
+html.light {
+  --app-bg:      #f4f4f5;
+  --app-surface: #ffffff;
+  --app-border:  #e4e4e7;
+  --app-text:    #111111;
+  --app-muted:   #71717a;
+  --app-nav:     #ffffff;
+  --app-accent:  #e50914;
+}
+
+/* ─── Base ───────────────────────────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--app-bg);
+  color: var(--app-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* ─── Light Mode Overrides ───────────────────────────────────────────────── */
+html.light .text-white {
+  color: var(--app-text) !important;
+}
+html.light .text-gray-300 {
+  color: #52525b !important;
+}
+html.light .text-gray-400 {
+  color: #71717a !important;
+}
+html.light .text-gray-500 {
+  color: #a1a1aa !important;
+}
+
+/* Navbar nav links */
+.nav-link {
+  color: var(--app-muted);
+  transition: color 0.15s;
+}
+.nav-link:hover {
+  color: var(--app-text);
+}
+
+/* ─── Utilities ──────────────────────────────────────────────────────────── */
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+img {
+  transition: opacity 0.3s ease;
+}
